@@ -1,2 +1,11 @@
-# web-dev-info-stock
-My web development info stock.
+# Web dev инфосклад
+
+Даный репозиторий создан, чтобы сохранить в одном месте всю интересную информацию по теме веб-разработки.
+
+Выбирите интересующую вас тему:
+
+[Yii2](/yii2/index.md)
+
+[PostgreSQL](/postgresql/index.md)
+
+[Полезные сайты и онлайн-сервисы](/sites/index.md)
