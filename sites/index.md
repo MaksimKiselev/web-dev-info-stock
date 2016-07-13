@@ -7,6 +7,9 @@ https://learn.javascript.ru/ Основы JavaScript.
 https://postgrespro.ru/doc Рускоязычная документация PostgreSQL
 
 
+### noSQL
+http://jsman.ru/mongo-book/ The Little MongoDB Book на русском.
+
 ### Полезные утилиты
 https://explain.depesz.com/ Визуальный анализатор плана запроса PostgreSQL
 

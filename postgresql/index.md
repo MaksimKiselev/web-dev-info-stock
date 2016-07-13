@@ -1,7 +1,7 @@
 # Материал по теме PostgreSQL
 
 #### PostgreSQL UPDATE FROM SELECT
-Бывают случаи, когда данные необходимо обновить по результатам некоторого запроса, для этого можно воспользоваться примерно следующей конструкцией:
+Когда необходимо обновить данные по результатам некоторого подзапроса, для этого можно воспользоваться следующей конструкцией:
 
 ```postgresql
 UPDATE dummy
@@ -13,6 +13,14 @@ FROM (
     FROM  /* big hairy SQL */
 ) AS subquery
 WHERE dummy.address_id = subquery.address_id;
+```
+
+
+#### PostgreSQL INSERT FROM SELECT
+Когда необходимо вставить данные в таблицу по результатам некоторого подзапроса, воспользуйтесь следующей конструкцией:
+
+```postgresql
+INSERT INTO current_invoices_items (item_id, invoice_id) SELECT id AS item_id, invoice_id AS invoice_id FROM items
 ```
 
 
