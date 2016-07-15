@@ -4,6 +4,8 @@
 
 Выбирите интересующую вас тему:
 
+[PHP](/php/README.md)
+
 [Yii2](/yii2/README.md)
 
 [Архитектура БД](/db-architecture/README.md)
