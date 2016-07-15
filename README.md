@@ -4,8 +4,10 @@
 
 Выбирите интересующую вас тему:
 
-[Yii2](/yii2/index.md)
+[Yii2](/yii2/README.md)
 
-[PostgreSQL](/postgresql/index.md)
+[Архитектура БД](/db-architecture/README.md)
 
-[Полезные сайты и онлайн-сервисы](/sites/index.md)
+[PostgreSQL](/postgresql/README.md)
+
+[Полезные сайты и онлайн-сервисы](/sites/README.md)
