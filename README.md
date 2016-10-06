@@ -12,6 +12,6 @@
 
 [PostgreSQL](/postgresql/README.md)
 
-[linux](/linux/README.md)
+[Linux](/linux/README.md)
 
 [Полезные сайты и онлайн-сервисы](/sites/README.md)
