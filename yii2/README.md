@@ -49,3 +49,6 @@ $config = [
 ```
 
 Чтобы одновременно поддерживать проекты и с fxp/composer-asset-plugin и с hiqdev/asset-packagist не удаляя глобально fxp/composer-asset-plugin используйте опцию ```--no-plugins``` при выполнении команды update/install
+
+Известные проблемы:
+Первую установку всё же придется провести используя плагин fxp/composer-asset-plugin, т.к. файл vendor/yiisoft/extensions.php не будет создан без плагина. В этом случае перестанут работать алиасы, можно пофиксить указывая путь относительно алиаса @vendor.
