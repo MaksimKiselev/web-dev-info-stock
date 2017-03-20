@@ -15,6 +15,23 @@ public function beforeAction($action)
 }
 ```
 
+### Перевод plural сообщения
+
+messages.php
+```php
+'{n, plural, one{bedroom} few{bedrooms} other{bedrooms}}' => '{n, plural, one{спальня} few{спальни} other{спален}}',
+```
+
+view.php
+```php
+<?= Yii::$app->i18n->translate(
+    'messages',
+    '{n, plural, one{bedroom} few{bedrooms} other{bedrooms}}',
+    ['n' => $model->bedrooms_count],
+    Yii::$app->language
+) ?>
+```
+
 
 ### Отказ от fxp/composer-asset-plugin в пользу hiqdev/asset-packagist
 
