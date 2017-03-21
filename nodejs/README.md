@@ -20,6 +20,7 @@ Cheerio это порт многим известного JQuery, что поз�
 ```js
 const request = require('request');
 const iconv = require('iconv');
+const cheerio = require('cheerio');
 
 request({
     uri: 'http://example.com/',
