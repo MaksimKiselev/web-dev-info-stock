@@ -23,3 +23,5 @@ http://ruhighload.com/ Русскоязычный сайт о оптимизац
 http://design-pattern.ru/ Описание паттернов проектирования на русском языке
 
 http://designpatternsphp.readthedocs.io/ru/latest/ Набор известных шаблонов проектирования (паттернов) и некоторые примеры их реализации в PHP
+
+https://refactoring.guru/ru Рефакторинг и Паттерны проектирования
