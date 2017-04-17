@@ -25,3 +25,6 @@ http://design-pattern.ru/ Описание паттернов проектиро
 http://designpatternsphp.readthedocs.io/ru/latest/ Набор известных шаблонов проектирования (паттернов) и некоторые примеры их реализации в PHP
 
 https://refactoring.guru/ru Рефакторинг и Паттерны проектирования
+
+### Прочее
+http://www.favicon.cc/ фавиконки
