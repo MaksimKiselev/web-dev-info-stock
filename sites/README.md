@@ -6,6 +6,7 @@ https://learn.javascript.ru/ Основы JavaScript.
 
 ### СУБД
 https://postgrespro.ru/doc Рускоязычная документация PostgreSQL
+
 https://www.youtube.com/channel/UCawnwMqZ6JeoSiEhrS6X69A/playlists?view=50&shelf_id=1&sort=dd Отличный курс по СУБД PostgreSQL
 
 
@@ -14,7 +15,8 @@ http://jsman.ru/mongo-book/ The Little MongoDB Book на русском.
 
 
 ## GIT
-http://ohshitgit.com/ Шпаргалка, о том, как устранять косяки в git.
+http://ohshitgit.com/ Шпаргалка, о том, как устранять косяки в git
+
 https://danielkummer.github.io/git-flow-cheatsheet/index.ru_RU.html Шпаргалка по gitflow
 
 
