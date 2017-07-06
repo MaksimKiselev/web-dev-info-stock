@@ -10,5 +10,5 @@ docker exec -t YOUR_DB_CONTAINER_NAME pg_dumpall -c -U postgres > dump_`date +%d
 
 Restore your databases
 ```bash
-cat YOUR_DUMP.sql | docker exec -i your-db-container psql -U postgres
+cat YOUR_DUMP.sql | docker exec -i YOUR_DB_CONTAINER_NAME psql -U postgres
 ```
