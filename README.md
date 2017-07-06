@@ -16,4 +16,8 @@
 
 [NodeJS](/nodejs/README.md)
 
+[Python](/python/README.md)
+
+[Docker](/docker/README.md)
+
 [Полезные сайты и онлайн-сервисы](/sites/README.md)
