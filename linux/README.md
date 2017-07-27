@@ -55,3 +55,10 @@ http://xgu.ru/wiki/stdin
 ```bash
 ssh -f -N -L 2000:192.168.0.222:7777 root@1.2.3.4
 ```
+
+-------------------------------------------------------------------------------
+
+#### Распаковка поддиректории второго уровня tar.gz архива в директорию системы
+```
+tar -C /destenation/path -xvf /path/to/archive.tar.gz --strip-components=2 path/inside_archive
+```
