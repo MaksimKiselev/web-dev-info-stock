@@ -65,6 +65,6 @@ tar -C /destenation/path -xvf /path/to/archive.tar.gz --strip-components=2 path/
 
 #### Запуск комманды однажды и без повторов в cron
 ```
-run-once
+run-one
 ```
 http://manpages.ubuntu.com/manpages/xenial/man1/run-one.1.html
