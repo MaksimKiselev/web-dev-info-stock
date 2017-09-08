@@ -12,3 +12,8 @@ Restore your databases
 ```bash
 cat YOUR_DUMP.sql | docker exec -i YOUR_DB_CONTAINER_NAME psql -U postgres
 ```
+
+### Quick clear all docker logs
+```bash
+truncate -s 0 /var/lib/docker/containers/*/*-json.log
+```
