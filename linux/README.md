@@ -63,7 +63,7 @@ ssh -f -N -L 2000:192.168.0.222:7777 root@1.2.3.4
 tar -C /destenation/path -xvf /path/to/archive.tar.gz --strip-components=2 path/inside_archive
 ```
 
-#### Запуск комманды однажды и без повторов в cron
+#### Запуск комманды в единственном экземпляре через cron
 ```
 run-one
 ```
