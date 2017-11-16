@@ -15,6 +15,8 @@ public function beforeAction($action)
 }
 ```
 
+
+
 ### Перевод plural сообщения
 
 messages.php
@@ -33,11 +35,26 @@ view.php
 ```
 
 
+
 ### Отказ от fxp/composer-asset-plugin в пользу hiqdev/asset-packagist
+С версии 2.0.13 шаблоны приложений Yii2 используют hiqdev/asset-packagist вместо fxp/composer-asset-plugin, используйте инструкцию ниже, чтобы мигрировать.
 
-Устали ждать пока fxp/composer-asset-plugin обновит все зависимости? Решение есть, просто начните использовать [asset-packagist](https://asset-packagist.org/).
+Удалите fxp/composer-asset-plugin из системы
+```bash
+composer global remove fxp/composer-asset-plugin
+```
 
-Установка очень простая, сначала добавьте в ваш ```composer.json```:
+Удалите из секции ```config``` файла ```composer.json```:
+```json
+"fxp-asset":{
+    "installer-paths": {
+        "npm-asset-library": "vendor/npm",
+        "bower-asset-library": "vendor/bower"
+    }
+}
+```
+
+Добавьте в ваш ```composer.json```:
 ```json
 "repositories": [
     {
@@ -47,13 +64,28 @@ view.php
 ]
 ```
 
-Для сохранения обратной совместимости с fxp/composer-asset-plugin в секции **extra -> asset-installer-paths** отредактируйте пути:
+В итоге ваш ```composer.json``` должен иметь примерно следующий вид:
+```json
+{
+    "minimum-stability": "stable",
+    "require": {
+        /* dependencies */
+    },
+    "require-dev": {
+        /* dev dependencies */
+    },
+    "config": {
+        "process-timeout": 1800
+    }
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
 ```
-vendor/npm -> vendor/npm-asset
-vendor/bower -> vendor/bower-asset
-```
-
-Финальным шагом задайте алиасы в конфигурации вашего приложения:
+Задайте алиасы в конфигурации вашего приложения(```common/config/main.php``` для advanced шаблона ```config/web.php``` для basic):
 ```php
 $config = [
     ...
@@ -65,7 +97,16 @@ $config = [
 ];
 ```
 
-Чтобы одновременно поддерживать проекты и с fxp/composer-asset-plugin и с hiqdev/asset-packagist не удаляя глобально fxp/composer-asset-plugin используйте опцию ```--no-plugins``` при выполнении команды update/install
+Последним шагом вы можете просто удалить ```./vendor``` и выполнить ```composer update```, либо переместите ```./vendor/bower``` в ```./vendor/bower-asset```, ```./vendor/npm``` в ```./vendor/npm-asset```,
 
-Известные проблемы:
-Первую установку всё же придется провести используя плагин fxp/composer-asset-plugin, т.к. файл vendor/yiisoft/extensions.php не будет создан без плагина. В этом случае перестанут работать алиасы, можно пофиксить указывая путь относительно алиаса @vendor.
+
+
+### Как создать миграции на существующую структуру
+Есть несколько расширений, советую [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik) т.к. сам его проверял.
+Так же есть [bizley/yii2-migration](https://github.com/bizley/yii2-migration), но данным расширением не пользовался.
+
+
+
+### Как сделать фикстуры из существующих в БД данных
+Есть несколько расширений, советую [Insolita/yii2-fixturegii](https://github.com/Insolita/yii2-fixturegii) т.к. сам его проверял.
+Так же есть [ElisDN/yii2-gii-fixture-generator](https://github.com/ElisDN/yii2-gii-fixture-generator), но данным расширением не пользовался.
