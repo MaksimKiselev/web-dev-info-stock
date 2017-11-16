@@ -69,7 +69,7 @@ composer global remove fxp/composer-asset-plugin
 {
     "minimum-stability": "stable",
     "require": {
-        'dependencies"
+        "dependencies"
     },
     "require-dev": {
         "dev dependencies"
