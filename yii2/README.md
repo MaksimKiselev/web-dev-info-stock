@@ -103,10 +103,12 @@ $config = [
 
 ### Как создать миграции на существующую структуру
 Есть несколько расширений, советую [Insolita/yii2-migrik](https://github.com/Insolita/yii2-migrik) т.к. сам его проверял.
+
 Так же есть [bizley/yii2-migration](https://github.com/bizley/yii2-migration), но данным расширением не пользовался.
 
 
 
 ### Как сделать фикстуры из существующих в БД данных
 Есть несколько расширений, советую [Insolita/yii2-fixturegii](https://github.com/Insolita/yii2-fixturegii) т.к. сам его проверял.
+
 Так же есть [ElisDN/yii2-gii-fixture-generator](https://github.com/ElisDN/yii2-gii-fixture-generator), но данным расширением не пользовался.
