@@ -12,6 +12,8 @@
 
 [PostgreSQL](/postgresql/README.md)
 
+[MySQL](/mysql/README.md)
+
 [Linux](/linux/README.md)
 
 [NodeJS](/nodejs/README.md)
