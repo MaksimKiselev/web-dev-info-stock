@@ -124,8 +124,8 @@ return [
     // other code
     
     'as access' => [
-        'class' => 'yii\filters\AccessControl',
-        'except' => ['auth/login', 'site/error'],
+        'class' => yii\filters\AccessControl::class,
+        'except' => ['site/login', 'site/error'],
         'rules' => [
             [
                 'allow' => true,
@@ -137,7 +137,7 @@ return [
     // other code
 ];
 ```
-Данный пример разрешает пользователям с ролью `admin` доступ ко всем маршрутам приложения. Маршруты `'site/error'` и `user/security/login` доступны всем пользователям.
+Данный пример разрешает пользователям с ролью `admin` доступ ко всем маршрутам приложения. Маршруты `'site/error'` и `site/login` доступны всем пользователям. Настройка ничем не отличается от настроки `AccessControl` в `behaviors()` контроллера.
 
 
 ### Как сделать login screen
