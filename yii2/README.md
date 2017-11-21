@@ -112,3 +112,36 @@ $config = [
 Есть несколько расширений, советую [Insolita/yii2-fixturegii](https://github.com/Insolita/yii2-fixturegii) т.к. сам его проверял.
 
 Так же есть [ElisDN/yii2-gii-fixture-generator](https://github.com/ElisDN/yii2-gii-fixture-generator), но данным расширением не пользовался.
+
+
+### Как повесить глобальный AccessControl для приложения
+Для того чтобы запретить глобально доступ до всех контроллеров приложения можно создать базовый контроллер и везде его наследовать, но зачем так извращаться когда можно просто в конфиге приложения подключить `AccessControl` фильтр:
+```php
+// Global access control
+'as accessDeny' => [
+    'class' => \yii\filters\AccessControl::class,
+    // Except error and login page
+    'except' => ['site/error', 'user/security/login'],
+    'rules' => [
+        [
+            'allow' => true,
+            'roles' => ['admin'],
+        ],
+    ],
+],
+```
+Данный пример разрешает пользователям с ролью `admin` доступ ко всем маршрутам приложения. Маршруты `'site/error'` и `user/security/login` доступны всем пользователям.
+
+
+### Как сделать login screen
+Чтобы сделать так называемый login screen, необходимо подменить layout, самый простой и элегантный способ это сделать, повесить обработчик на событие `beforeAction`:
+```php
+'on beforeAction' => function (\yii\base\Event $e) {
+    /** @var \yii\web\Application $app */
+    $app = $e->sender;
+    // Set login layout for guest users
+    if ($app->getUser()->getIsGuest()) {
+        $app->layout = 'login';
+    }
+},
+```
