@@ -115,22 +115,29 @@ $config = [
 
 
 ### Как повесить глобальный AccessControl для приложения
-Для того чтобы запретить глобально доступ до всех маршрутов приложения можно создать базовый контроллер и везде его наследовать, но зачем так извращаться когда можно просто в конфиге приложения подключить `AccessControl` фильтр:
+Для глобального запрета доступа к приложению зачастую применяется антипаттерн GodObject в виде создания базового контроллера и наследования от него. В Yii2 правильным решением данной задачи будет подключение `AccessControl` фильтра в конфигурации приложения:
 ```php
-// Global access control
-'as accessDeny' => [
-    'class' => \yii\filters\AccessControl::class,
-    // Except error and login page
-    'except' => ['site/error', 'user/security/login'],
-    'rules' => [
-        [
-            'allow' => true,
-            'roles' => ['admin'],
+<?php
+// other code
+
+return [
+    // other code
+    
+    'as access' => [
+        'class' => yii\filters\AccessControl::class,
+        'except' => ['site/login', 'site/error'],
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['admin'],
+            ],
         ],
     ],
-],
+    
+    // other code
+];
 ```
-Данный пример разрешает пользователям с ролью `admin` доступ ко всем маршрутам приложения. Маршруты `'site/error'` и `user/security/login` доступны всем пользователям.
+Данный пример разрешает пользователям с ролью `admin` доступ ко всем маршрутам приложения. Маршруты `'site/error'` и `site/login` доступны всем пользователям. Настройка ничем не отличается от настроки `AccessControl` в `behaviors()` контроллера.
 
 
 ### Как сделать login screen
